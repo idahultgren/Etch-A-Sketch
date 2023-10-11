@@ -1,11 +1,14 @@
 const gridContainer = document.querySelector('.js-container');
+const size = {x : 16, y : 16}
 
 createGrid();
 
 function createGrid() {
-  const total = 16 * 16;
+  const total = size.x * size.y;
   for(let i = 0; i < total; i++) {
-    createElement(gridContainer, 'div', '', 'box');
+    const div = createElement(gridContainer, 'div', '', 'box');
+
+    div.addEventListener ('mouseover', () => {div.style.backgroundColor = 'black'});
   };
   gridContainer.style.setProperty('grid-template-columns', 'repeat(16, 1fr)')
 };
