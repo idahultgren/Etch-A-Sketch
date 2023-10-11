@@ -1,5 +1,6 @@
 const gridContainer = document.querySelector('.js-sketchpad');
 const sizeButton = document.querySelector('.js-sizebutton');
+const clearButton = document.querySelector('.js-clearbutton');
 let size = {x : 16, y : 16}
 let div = '';
 
@@ -45,3 +46,7 @@ if (input == null || input == '') {
   createGrid();
 });
 
+clearButton.addEventListener ('click', () => {
+  deleteGrid();
+  createGrid();
+});
