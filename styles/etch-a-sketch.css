@@ -11,12 +11,23 @@
   display: flex;
 }
 
-button {
+.button-container {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+button,
+.colorpick {
   margin-bottom: 20px;
   width: 100px;
-  height: 80px;
+  height: 100px;
   padding: 10px;
   cursor: pointer;
   align-self: flex-start;
   margin-right: 20px;
+}
+
+.colorpick {
+  padding: 0px;
 }

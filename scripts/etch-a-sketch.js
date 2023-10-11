@@ -1,8 +1,10 @@
 const gridContainer = document.querySelector('.js-sketchpad');
 const sizeButton = document.querySelector('.js-sizebutton');
 const clearButton = document.querySelector('.js-clearbutton');
+const colorPicker = document.querySelector('.js-colorpick');
 let size = {x : 16, y : 16}
 let div = '';
+let currentColor = '#000000';
 
 createGrid();
 
@@ -17,7 +19,7 @@ function createGrid() {
 };
 
 function addHover(element) {
-  element.addEventListener('mouseover', () => {element.style.backgroundColor = 'black';});
+  element.addEventListener('mouseover', () => {element.style.backgroundColor = currentColor;});
 };
 
 function createElement(parent, eleType, html, eleClass) {
@@ -49,4 +51,12 @@ if (input == null || input == '') {
 clearButton.addEventListener ('click', () => {
   deleteGrid();
   createGrid();
+});
+
+colorPicker.addEventListener('input' , (e) => {
+  currentColor = e.target.value;
+});
+
+eraseButton.addEventListener ('click', () => {
+  currentColor = '#FFFFFF';
 });
