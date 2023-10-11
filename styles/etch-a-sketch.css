@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  width: 60vw;
+  height: 80vh;
+  border: solid 1px black;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.box {
+  border: solid 1px grey;
+} 
