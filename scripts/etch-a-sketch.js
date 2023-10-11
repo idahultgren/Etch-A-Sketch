@@ -9,9 +9,14 @@ function createGrid() {
   const total = size.x * size.y;
   for(let i = 0; i < total; i++) {
     div = createElement(gridContainer, 'div', '', 'box');
+
+    addHover(div);
   };
   gridContainer.style.setProperty('grid-template-columns', `repeat(${size.x}, 1fr)`)
-  
+};
+
+function addHover(element) {
+  element.addEventListener('mouseover', () => {element.style.backgroundColor = 'black';});
 };
 
 function createElement(parent, eleType, html, eleClass) {
@@ -25,9 +30,8 @@ function deleteGrid() {
   while (gridContainer.firstChild) {
     gridContainer.removeChild(gridContainer.firstChild);
   };
-  gridContainer.style.removeProperty('grid-template columns');
+  gridContainer.style.removeProperty('grid-template-columns');
 };
-
 
 sizeButton.addEventListener ('click', () => {
   const input = prompt('Please add a value');
