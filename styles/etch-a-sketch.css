@@ -7,10 +7,6 @@
   margin: auto;
 }
 
-.box {
-  border: solid 1px grey;
-} 
-
 .container {
   display: grid;
 }

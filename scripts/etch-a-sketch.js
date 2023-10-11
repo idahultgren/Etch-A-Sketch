@@ -34,12 +34,12 @@ function deleteGrid() {
 };
 
 sizeButton.addEventListener ('click', () => {
-  const input = prompt('Please add a value');
+  const input = prompt('Please enter a value up to 100');
 if (input == null || input == '') {
   size = {x : 16, y : 16}
 } else {
-  size.x = input;
-  size.y = input;
+  size.x = input > 100 ? 100 : input;
+  size.y = input > 100 ? 100 : input;
 }
   deleteGrid();
   createGrid();
