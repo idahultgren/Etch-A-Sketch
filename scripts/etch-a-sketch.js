@@ -1,10 +1,12 @@
 const gridContainer = document.querySelector('.js-sketchpad');
 const sizeButton = document.querySelector('.js-sizebutton');
 const clearButton = document.querySelector('.js-clearbutton');
-const colorPicker = document.querySelector('.js-colorpick');
+const colorPicker = document.getElementById('colorPicker');
+const eraseButton = document.querySelector('.js-erasebutton');
 let size = {x : 16, y : 16}
 let div = '';
 let currentColor = '#000000';
+let eraseMode = false;
 
 createGrid();
 
@@ -19,7 +21,13 @@ function createGrid() {
 };
 
 function addHover(element) {
-  element.addEventListener('mouseover', () => {element.style.backgroundColor = currentColor;});
+  element.addEventListener('mouseover', () => {
+  if (eraseMode) {
+    element.style.backgroundColor = '#FFFFFF';
+  } else {
+    element.style.backgroundColor = currentColor;
+    }  
+  });
 };
 
 function createElement(parent, eleType, html, eleClass) {
@@ -58,5 +66,6 @@ colorPicker.addEventListener('input' , (e) => {
 });
 
 eraseButton.addEventListener ('click', () => {
-  currentColor = '#FFFFFF';
+  eraseMode = !eraseMode;
+  eraseButton.textContent = eraseMode ? 'Drawing Mode' : 'Erase';
 });
