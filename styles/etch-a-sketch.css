@@ -1,4 +1,4 @@
-.container {
+.sketchpad{
   display: grid;
   width: 960px;
   height: 960px;
@@ -9,5 +9,15 @@
 
 .box {
   border: solid 1px grey;
-  back
 } 
+
+.container {
+  display: grid;
+}
+
+.sizebutton {
+  margin-bottom: 20px;
+  width: 100px;
+  padding: 10px;
+  cursor: pointer;
+}
